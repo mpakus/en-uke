@@ -1,0 +1,26 @@
+<div class="col-md-6 col-sm-6">
+  <div class="about-us">
+    <h2><strong>About</strong></h2>
+    <ul>
+      <li>Google Chrome Extensions</li>
+      <li>Keeps your interesting links only 1 week</li>
+      <li>Helps to keep your browser bookmarks clean</li>
+    </ul>
+  </div>
+</div>
+<div class="col-md-6 col-sm-6">
+  <div class="signin-form">
+    <h2><strong>Sign</strong> in</h2>
+    <form class="form" method="POST" action="<%= auth_users_path %>">
+      <div class="form-group">
+        <input type="text" name="email" class="form-control input-lg" placeholder="Email" required="true" />
+      </div>
+      <div class="form-group">
+        <input type="password" name="password" class="form-control input-lg" placeholder="Password" required="true" />
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-warning btn-lg">Sign in</button>
+      </div>
+    </form>
+  </div>
+</div>

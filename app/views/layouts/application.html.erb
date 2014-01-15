@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>En uke - last chance for keep links 1 week in safe</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="logo">
+      <h1><a href="/">En uke</a></h1>
+      <span class="slogan">Keeps<br/> your bookmarks<br/> only one week.</span>
+    </div>
+
+    <div class="header-content">
+      <div class="row">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<%= javascript_include_tag "application", "data-turbolinks-track" => false %>
+
+</body>
+</html>

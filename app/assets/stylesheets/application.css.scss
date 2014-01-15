@@ -1,0 +1,196 @@
+//= require_self
+//= require_tree .
+
+@import "twitter/bootstrap";
+
+$nprogress-color: #3576BE;
+@import 'nprogress';
+@import 'nprogress-bootstrap';
+#nprogress .bar { height: 4px !important; }
+
+html, body { height: 100%; }
+
+
+body{
+  font-family: 'Open Sans', sans-serif;
+  color:#666;
+  font-size:13px;
+  line-height:20px;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: 300;
+}
+
+p{
+  font-size:14px;
+  line-height:25px;
+  margin:0;
+  padding:0;
+}
+
+a{
+  color:#888;
+  text-decoration: none;
+  border-bottom: 1px dashed #999;
+}
+a:hover{
+  color:#555;
+  border-bottom: 0;
+  text-decoration: none;
+  border-bottom: 1px solid #555;
+}
+a:hover,a:active,a:focus {
+  outline: 0;
+}
+
+a, input, select, button{
+  -webkit-transition: All 0.5s ease;
+  -moz-transition: All 0.5s ease;
+  -o-transition: All 0.5s ease;
+  -ms-transition: All 0.5s ease;
+  transition: All 0.5s ease;
+}
+
+
+/* Container + Header */
+.container{
+  max-width:1050px;
+}
+
+header{
+  background: #EEE image-url('sands.jpg') center center repeat;
+  height: 100%;
+}
+
+header {
+  .logo{
+    margin-top: 20px;
+    overflow: hidden;
+    .slogan{
+      display: inline-block;
+      margin-top: 65px;
+      color: #FFF;
+      font-family: 'Open Sans Condensed', sans-serif;
+      font-weight: 300;
+      font-size: 39px;
+      line-height: 35px;
+    }
+  }
+  .logo h1{
+    float: left;
+    margin-right: 20px;
+  }
+  .logo a{
+    color: #FFF;
+    background: #545aa5;
+    border-bottom:0px;
+    display:inline-block;
+    text-indent: -1000em;
+    width: 150px;
+    height: 150px;
+    background: #5258a5 image-url('en-uke-logo.png') center center repeat;
+  }
+  .logo a:hover{
+    text-decoration:none;
+  }
+}
+
+/* About */
+header{
+  .about-us{
+    background:#fff;
+    margin-top:20px;
+    padding: 20px;
+    height: 285px;
+  }
+  .about-us > h2{
+    font-size:32px;
+    color:#444;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+}
+
+/* Signin Block */
+header{
+  .signin-form{
+    margin-top: 20px;
+    background: #353535;
+    padding: 20px;
+    height: 285px;
+    form{ margin:0; padding: 0; }
+  }
+
+  .signin-form > h2{
+    font-size: 32px;
+    color: #fff;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+
+  .signin-form .input-lg{
+    border:1px solid #777;
+    border-radius:0px;
+    background:#444444;
+    font-size:15px;
+    color:#999;
+    box-shadow:none;
+    margin-top:10px;
+    &:focus{
+      background: #EEE;
+      color: #444;
+    }
+  }
+
+  .signin-form .btn{
+    background: #545aa5;
+    color:#fff;
+    border-radius:0px;
+    border: 0;
+    margin-top:10px;
+  }
+  .signin-form .btn:hover{
+    background: #6587bb;
+  }
+}
+
+/* Signed in */
+header{
+  .signedin{
+    background:#fff;
+    margin-top:20px;
+    padding: 20px;
+    overflow: hidden;
+  }
+  .signedin > h2{
+    font-size:32px;
+    color:#444;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+}
+
+.signedin{
+  margin-bottom: 20px;
+  .user_panel{
+    float: right;
+    line-height: 30px;
+    .user_avatar{
+      width: 30px;
+      border: 2px solid #EEE;
+      border-radius: 50%;
+      margin-right: 5px;
+    }
+  }
+}
+
+header .link{
+  line-height: 30px;
+  height: 30px;
+  overflow: hidden;
+}
+.color-blue{ color: #6587bb; }
+.color-gray{ color: #DDD; }
