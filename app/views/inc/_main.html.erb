@@ -1,27 +1,54 @@
-<div class="col-md-6 col-sm-6">
-  <div class="about-us">
-    <h2><strong>About</strong></h2>
-    <ul>
-      <li>Google Chrome Extensions</li>
-      <li>Keeps your interesting links only 1 week</li>
-      <li>Helps to keep your browser bookmarks & tabs clean</li>
-    </ul>
-    <a href="https://chrome.google.com/webstore/detail/lhjigdijagldjpkijggjflioflpdgmbb" class="chrome-store"><%= image_tag 'chrome_web_store_340x96.png' %></a>
+<div class="row">
+  <div class="col-md-6 col-sm-6">
+    <div class="about-us">
+      <h2><strong>About</strong></h2>
+      <ul>
+        <li>Google Chrome Extensions</li>
+        <li>Keeps your interesting links only 1 week</li>
+        <li>Helps to keep your browser bookmarks & tabs clean</li>
+      </ul>
+      <a href="https://chrome.google.com/webstore/detail/lhjigdijagldjpkijggjflioflpdgmbb" class="chrome-store"><%= image_tag 'chrome_web_store_340x96.png' %></a>
+    </div>
+  </div>
+  <div class="col-md-6 col-sm-6">
+    <div class="signin-form">
+      <h2><strong>Sign</strong> in</h2>
+      <form class="form" method="POST" action="<%= auth_users_path %>">
+        <div class="form-group">
+          <input type="text" name="email" class="form-control input-lg" placeholder="Email" required="true" />
+        </div>
+        <div class="form-group">
+          <input type="password" name="password" class="form-control input-lg" placeholder="Password" required="true" />
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-warning btn-lg">Sign in</button>
+        </div>
+      </form>
+    </div>
   </div>
 </div>
-<div class="col-md-6 col-sm-6">
-  <div class="signin-form">
-    <h2><strong>Sign</strong> in</h2>
-    <form class="form" method="POST" action="<%= auth_users_path %>">
-      <div class="form-group">
-        <input type="text" name="email" class="form-control input-lg" placeholder="Email" required="true" />
+
+<div class="row">
+  <div class="col-md-12 col-sm-12">
+    <noindex>
+      <div style="margin-top:30px;" class="pull-right">
+        <!-- AddThis Button BEGIN -->
+        <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+          <a class="addthis_button_vk"></a>
+          <a class="addthis_button_facebook"></a>
+          <a class="addthis_button_twitter"></a>
+          <a class="addthis_button_google_plusone_share"></a>
+          <a class="addthis_button_livejournal"></a>
+          <a class="addthis_button_blogger"></a>
+          <a class="addthis_button_reddit"></a>
+          <a class="addthis_button_compact"></a><a class="addthis_counter addthis_bubble_style"></a>
+        </div>
+        <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=mpak999"></script>
+        <!-- AddThis Button END -->
+
+        <!-- Yandex.Metrika counter --><script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter23666923 = new Ya.Metrika({id:23666923, accurateTrackBounce:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="//mc.yandex.ru/watch/23666923" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
       </div>
-      <div class="form-group">
-        <input type="password" name="password" class="form-control input-lg" placeholder="Password" required="true" />
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-warning btn-lg">Sign in</button>
-      </div>
-    </form>
+    </noindex>
   </div>
 </div>

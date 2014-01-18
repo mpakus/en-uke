@@ -1,19 +1,21 @@
 <% if user_signed_in? %>
-  <div class="col-md-12 col-sm-12">
-    <div class="signedin">
+  <div class="row">
+    <div class="col-md-12 col-sm-12">
+      <div class="signedin">
       <span class="user_panel">
         <%= image_tag current_user.avatar, class: 'user_avatar' unless current_user.email.blank? %>
         <strong class="user_email"><%= current_user.email %></strong> | <%= link_to 'exit', user_path(9), method: :delete, data: { confirm: 'Are you sure?' }, class: 'user_exit' %>
       </span>
-      <h2><strong>Nice</strong> to see you again</h2>
+        <h2><strong>Nice</strong> to see you again</h2>
 
-      <div id="user_links">
-        <% @user_links.each do |link| %>
-          <div class="col-md-6 col-sm-6 link">
-            <a class="glyphicon <%= link.keeped? ? 'glyphicon-star color-blue' : 'glyphicon-star-empty color-gray' %> keep-status" data-id="<%= link.id %>"></a>
-            <a href="<%= link.url %>" target="_blank"><%= (link.title.nil?) ? link.url : link.title %></a>
-          </div>
-        <% end %>
+        <div id="user_links">
+          <% @user_links.each do |link| %>
+            <div class="col-md-6 col-sm-6 link">
+              <a class="glyphicon <%= link.keeped? ? 'glyphicon-star color-blue' : 'glyphicon-star-empty color-gray' %> keep-status" data-id="<%= link.id %>"></a>
+              <a href="<%= link.url %>" target="_blank"><%= (link.title.nil?) ? link.url : link.title %></a>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>

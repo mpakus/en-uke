@@ -12,6 +12,12 @@
   <link rel="icon" href="http://en-uke.com/favicon.ico" type="image/x-icon">
   <link rel="shortcut icon" href="http://en-uke.com/favicon.ico" type="image/x-icon">
   <link rel="shortcut icon" href="http://en-uke.com/favicon.ico" type="image/vnd.microsoft.icon">
+  <!-- FB -->
+  <meta property="og:title" content="En uke - keeps your bookmarks only one week" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="<%= url_to_asset('en-uke-logo.png') %>" />
+  <meta property="og:url" content="http://en-uke.com" />
+  <meta property="og:description" content="Bookmarks productivity service" />
 </head>
 <body>
 <header>
@@ -22,9 +28,7 @@
     </div>
 
     <div class="header-content">
-      <div class="row">
-        <%= yield %>
-      </div>
+      <%= yield %>
     </div>
   </div>
 </header>
