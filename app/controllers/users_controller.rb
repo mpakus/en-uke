@@ -23,18 +23,11 @@ class UsersController < ApplicationController
     end
   end
 
-  def signup
-    @user = User.new
-  end
-
-  def signin;end
-
   def create
     @user = User.new(email: params[:email], password: params[:password])
     if @user.save
       session[:user_id] = @user.id
     end
-
     respond_to do |format|
       format.html {
         if @user.nil?

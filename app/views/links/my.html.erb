@@ -7,16 +7,14 @@
       </span>
       <h2><strong>Nice</strong> to see you again</h2>
 
-      <% @user_links.each do |link| %>
-        <div class="col-md-6 col-sm-6 link">
-          <% if link.keeped? %>
-            <span class="glyphicon glyphicon-star color-blue"></span>
-          <% else %>
-            <span class="glyphicon glyphicon-star-empty color-gray"></span>
-          <% end %>
-          <a href="<%= link.url %>" target="_blank"><%= (link.title.nil?) ? link.url : link.title %></a>
-        </div>
-      <% end %>
+      <div id="user_links">
+        <% @user_links.each do |link| %>
+          <div class="col-md-6 col-sm-6 link">
+            <a class="glyphicon <%= link.keeped? ? 'glyphicon-star color-blue' : 'glyphicon-star-empty color-gray' %> keep-status" data-id="<%= link.id %>"></a>
+            <a href="<%= link.url %>" target="_blank"><%= (link.title.nil?) ? link.url : link.title %></a>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 <% else %>
