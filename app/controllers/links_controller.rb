@@ -2,20 +2,20 @@ class LinksController < ApplicationController
   skip_before_filter :verify_authenticity_token
 
   def my
-    @user_links = current_user.links.where('state != 10').ordered.all if user_signed_in?
+    @user_links = current_user.links.living.ordered.all if user_signed_in?
   end
 
   def index
     unless params[:user_token].blank?
       @user  = User.where(token: params[:user_token]).first
-      @links = Link.where(user: @user).ordered.limit(20).all if @user
+      @links = Link.where(user: @user).living.ordered.limit(20).all if @user
     end
   end
 
   def exist
     unless params[:user_token].blank?
-      @user = User.where(token: params[:user_token]).first
-      @link = Link.where(user: @user, url: params[:url]).first if @user
+      @user = User.where(token: params[:user_token]).living.first
+      @link = Link.where(user: @user, url: params[:url]).living.first if @user
     end
   end
 

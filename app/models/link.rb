@@ -2,6 +2,7 @@ class Link < ActiveRecord::Base
   belongs_to :user
 
   scope :ordered, ->{ order('created_at DESC') }
+  scope :living, ->{ where('state != 10') }
 
   state_machine initial: :pending do
     state :pending,  value: 0
