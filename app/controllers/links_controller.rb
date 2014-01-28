@@ -14,7 +14,7 @@ class LinksController < ApplicationController
 
   def exist
     unless params[:user_token].blank?
-      @user = User.where(token: params[:user_token]).living.first
+      @user = User.where(token: params[:user_token]).first
       @link = Link.where(user: @user, url: params[:url]).living.first if @user
     end
   end
