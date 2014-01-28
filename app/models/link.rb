@@ -21,7 +21,7 @@ class Link < ActiveRecord::Base
 
   # Put into garbage all old links
   def self.week_aging
-    Link.where('created_at < ?', 1.week.ago).find_each do |link|
+    Link.where('created_at < ?', 1.week.ago).with_state(:pending).find_each do |link|
       link.to_garbage
       link.save
     end
