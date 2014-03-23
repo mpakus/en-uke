@@ -7,8 +7,9 @@ class LinksController < ApplicationController
 
   def index
     unless params[:user_token].blank?
+      per_page = params[:per_page] || 20
       @user  = User.where(token: params[:user_token]).first
-      @links = Link.where(user: @user).living.ordered.limit(20).all if @user
+      @links = Link.where(user: @user).living.ordered.limit(per_page).all if @user
     end
   end
 
@@ -21,7 +22,7 @@ class LinksController < ApplicationController
 
   def keep
     unless params[:user_token].blank?
-      @user = User.where(token: params[:user_token]).first
+      @user = User.where(token: params[:user_token]).living.first
       if @user
         if params[:id]
           @link = Link.where(user: @user, id: params[:id]).first
