@@ -59,6 +59,7 @@ group :production do
 end
 
 group :development do
+  gem "net-ssh", "~> 2.7.0"
   gem 'capistrano'
   gem 'rvm-capistrano'
   gem 'better_errors'

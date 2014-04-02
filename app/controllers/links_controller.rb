@@ -22,12 +22,12 @@ class LinksController < ApplicationController
 
   def keep
     unless params[:user_token].blank?
-      @user = User.where(token: params[:user_token]).living.first
+      @user = User.where(token: params[:user_token]).first
       if @user
         if params[:id]
-          @link = Link.where(user: @user, id: params[:id]).first
+          @link = Link.where(user: @user, id: params[:id]).living.first
         else
-          @link = Link.where(user: @user, url: params[:url]).first
+          @link = Link.where(user: @user, url: params[:url]).living.first
         end
         @link.keeped? ? @link.unkeep : @link.keep
       end
