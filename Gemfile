@@ -53,6 +53,7 @@ gem 'gravatar-ultimate'
 gem 'rufus-scheduler'
 gem 'delayed_job'
 gem 'delayed_job_active_record'
+gem "daemons"
 gem "ruby-readability", :require => 'readability'
 
 group :production do
