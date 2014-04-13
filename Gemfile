@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.3'
+gem 'rails', '4.1'
 
 # Use mysql as the database for Active Record
 gem 'mysql2'
@@ -51,6 +51,9 @@ gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails', :github => 'anjlab/
 gem 'state_machine'
 gem 'gravatar-ultimate'
 gem 'rufus-scheduler'
+gem 'delayed_job'
+gem 'delayed_job_active_record'
+gem "ruby-readability", :require => 'readability'
 
 group :production do
   gem 'unicorn'
@@ -67,6 +70,7 @@ group :development do
   gem 'sextant'
   gem 'quiet_assets'
   gem 'binding_of_caller'
+  gem 'spring'
   #gem 'sunspot_solr'
 end
 

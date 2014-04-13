@@ -56,6 +56,7 @@ a, input, select, button{
 
 header{
   background: #EEE image-url('sands.jpg') center center repeat;
+  overflow-y: auto;
   height: 100%;
 }
 

@@ -1,5 +1,10 @@
 class Link < ActiveRecord::Base
   belongs_to :user
+  belongs_to :content
+
+  after_save do |link|
+    ContentJob.new.parse(link)
+  end
 
   scope :ordered, ->{ order('created_at DESC') }
   scope :living,  ->{ where('state != 10') }
@@ -17,6 +22,11 @@ class Link < ActiveRecord::Base
     event :to_garbage do
       transition pending: :garbage, keeped: :garbage
     end
+  end
+
+  # Parse content via link
+  def get_content!
+    ContentJob.new.parse(self)
   end
 
   # Put into garbage all old links

@@ -11,7 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140115034103) do
+ActiveRecord::Schema.define(version: 20140413105302) do
+
+  create_table "contents", force: true do |t|
+    t.string   "url"
+    t.text     "text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "delayed_jobs", force: true do |t|
+    t.integer  "priority",   default: 0, null: false
+    t.integer  "attempts",   default: 0, null: false
+    t.text     "handler",                null: false
+    t.text     "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string   "locked_by"
+    t.string   "queue"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
 
   create_table "links", force: true do |t|
     t.string   "url"
@@ -20,6 +43,7 @@ ActiveRecord::Schema.define(version: 20140115034103) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "state",      default: 0
+    t.integer  "content_id"
   end
 
   add_index "links", ["user_id"], name: "index_links_on_user_id", using: :btree
