@@ -58,7 +58,7 @@ gem "ruby-readability", :require => 'readability'
 group :production do
   gem 'unicorn'
   gem 'therubyracer', platforms: :ruby
-  #gem 'newrelic_rpm'
+  gem 'newrelic_rpm'
 end
 
 group :development do
