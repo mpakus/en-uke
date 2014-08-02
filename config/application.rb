@@ -26,6 +26,6 @@ module EnUke
     # config.i18n.default_locale = :de
     config.action_dispatch.cookies_serializer = :hybrid
 
-    config.autoload_paths += %W(#{config.root}/lib/jobs)
+    # config.autoload_paths += %W(#{config.root}/lib/jobs)
   end
 end

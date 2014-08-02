@@ -41,6 +41,7 @@ class LinksController < ApplicationController
     unless params[:user_token].blank? || params[:url].blank?
       @user = User.where(token: params[:user_token]).first
       @link = Link.create(url: params[:url], title: params[:title], user: @user) if @user
+      ContentWorker.perform_async(@link.url, @link.id)
     end
     respond_to do |format|
       format.json { render 'create', type: :jbuilder }

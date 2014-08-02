@@ -51,9 +51,10 @@ gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails', :github => 'anjlab/
 gem 'state_machine'
 gem 'gravatar-ultimate'
 gem 'rufus-scheduler'
-gem 'delayed_job'
-gem 'delayed_job_active_record'
-gem "daemons"
+# gem 'delayed_job'
+# gem 'delayed_job_active_record'
+# gem "daemons"
+gem 'sidekiq'
 gem "ruby-readability", :require => 'readability'
 
 group :production do
@@ -72,6 +73,7 @@ group :development do
   gem 'quiet_assets'
   gem 'binding_of_caller'
   gem 'spring'
+  gem 'capistrano-sidekiq' , github: 'seuros/capistrano-sidekiq'
   #gem 'sunspot_solr'
 end
 

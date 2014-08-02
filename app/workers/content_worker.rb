@@ -1,20 +1,21 @@
-class ContentJob
-  def parse(link)
+class ContentWorker
+  include Sidekiq::Worker
+
+  def perform(url, link_id)
     require 'readability'
     require 'open-uri'
-    url     = normalize(link.url)
+    # url     = normalize(url)
     content = Content.where(url: url).first
     if content.nil?
-      source  = open(link.url).read
+      source  = open(url).read
       content = Content.create(text: Readability::Document.new(source).content, url: url)
       content.save
     end
-    link.content = content
-    link.save
+    link = Link.find(link_id)
+    link.update_attributes(content: content)
   rescue => e
     puts e.message
   end
-  handle_asynchronously :parse
 
   protected
   def normalize(url)

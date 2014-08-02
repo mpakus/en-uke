@@ -2,10 +2,6 @@ class Link < ActiveRecord::Base
   belongs_to :user
   belongs_to :content
 
-  after_save do |link|
-    ContentJob.new.parse(link)
-  end
-
   scope :ordered, ->{ order('created_at DESC') }
   scope :living,  ->{ where('state != 10') }
 
@@ -26,7 +22,7 @@ class Link < ActiveRecord::Base
 
   # Parse content via link
   def get_content!
-    ContentJob.new.parse(self)
+    ContentWorker.perform_async(self.url, self.id)
   end
 
   # Put into garbage all old links
