@@ -7,6 +7,14 @@ GIT
       railties (>= 3.0)
       sass (>= 3.2)
 
+GIT
+  remote: git://github.com/seuros/capistrano-sidekiq.git
+  revision: 2182753ef10848148b869fcf26cb3cdc2ec34550
+  specs:
+    capistrano-sidekiq (0.3.6)
+      capistrano
+      sidekiq
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -201,6 +209,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   capistrano
+  capistrano-sidekiq!
   coffee-rails (~> 4.0.0)
   gravatar-ultimate
   jbuilder (~> 1.2)
